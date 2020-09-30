@@ -8,10 +8,11 @@ import routes from "./routes";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
+import { contentSecurityPolicy } from "helmet";
 
 const app = express();
 
-app.use(helmet());
+app.use(helmet({}));
 app.set("view engine", "pug");
 app.use(cookieParser());
 app.use(bodyParser.json());
